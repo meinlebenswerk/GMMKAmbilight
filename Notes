@@ -1,0 +1,45 @@
+We need to check for the current keyboard model (Do we tho?)`
+
+No need to know the full keymap, since the button-ids are just mapped differently?
+This will become obvious, later.
+
+Does GMMK know that?
+
+Keymap is stolen from QMK
+Code is based on https://github.com/paulguy/gmmkctl
+And also https://github.com/Kolossi/GmmkUtil
+and a tiny bit https://github.com/dokutan/rgb_keyboard
+
+Now i need to read the german map and the fullsize map
+From this i can generate a list of point mappings
+
+This can be made into a texture
+
+And then used in a glsl shader.
+
+
+-> Maybe like this:
+Since the iso keymap has no key-names?
+-> But it has a general layout
+
+Maybe i can just generate a vector of points from the GMMK map
+And then match them up with the ISO map's points.
+
+
+Ayy it has rows/columns
+-> this can be used to match them up, and then use the coordinates from the json
+
+-> Okay, if i assign the GMMK's keys an x-y coordinate
+-> I can use the Matrix to check which key it is
+-> and then just take the id from one and the coords from the other
+
+
+How the fuck does this work??
+
+Take the appropriate location from the image
+Average it
+And then write it into a buffer, based on key-id.
+
+
+Probably the best:
+Build a blur-shader, which runs atop of the screen-capture
